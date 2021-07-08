@@ -1,13 +1,17 @@
 <template>
   <header class="navbar">
-    <img class="navbar-logo" src="../assets/16pads-logo.svg" alt="16pads" />
+    <router-link to="/">
+      <img class="navbar-logo" src="../assets/16pads-logo.svg" alt="16pads" />
+    </router-link>
     <nav>
       <ul class="navbar-menu">
         <li>
-          <a href="#">Collection</a>
+          <router-link class="navbar-link" to="/collection"
+            >Collection</router-link
+          >
         </li>
         <li>
-          <a href="#">About</a>
+          <router-link class="navbar-link" to="/about">About</router-link>
         </li>
       </ul>
     </nav>
@@ -38,7 +42,7 @@ export default {
   list-style: none;
 }
 
-.navbar-menu a {
+.navbar-link {
   text-decoration: none;
   color: #fff;
   font-size: 1.8rem;

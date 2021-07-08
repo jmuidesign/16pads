@@ -1,23 +1,12 @@
 <template>
   <div class="container">
-    <Home />
-    <!-- <Collection />
-    <About /> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Home from "./pages/Home.vue";
-// import Collection from "./pages/Collection.vue";
-// import About from "./pages/About.vue";
-
 export default {
   name: "App",
-  components: {
-    Home,
-    // Collection,
-    // About,
-  },
 };
 </script>
 
