@@ -2,22 +2,22 @@
   <Navbar />
   <main class="content collection-content">
     <div class="pads">
-      <button class="pad pad-a active"></button>
-      <button class="pad pad-a"></button>
-      <button class="pad pad-a"></button>
-      <button class="pad pad-a"></button>
-      <button class="pad pad-a active"></button>
-      <button class="pad pad-a"></button>
-      <button class="pad pad-a"></button>
-      <button class="pad pad-a"></button>
-      <button class="pad pad-b active"></button>
-      <button class="pad pad-b"></button>
-      <button class="pad pad-b"></button>
-      <button class="pad pad-b"></button>
-      <button class="pad pad-b active"></button>
-      <button class="pad pad-b"></button>
-      <button class="pad pad-b"></button>
-      <button class="pad pad-b"></button>
+      <Pad row="a" />
+      <Pad row="a" />
+      <Pad row="a" />
+      <Pad row="a" />
+      <Pad row="a" />
+      <Pad row="a" />
+      <Pad row="a" />
+      <Pad row="a" />
+      <Pad row="b" />
+      <Pad row="b" />
+      <Pad row="b" />
+      <Pad row="b" />
+      <Pad row="b" />
+      <Pad row="b" />
+      <Pad row="b" />
+      <Pad row="b" />
     </div>
     <div class="pack-infos">
       <h1>Pack Name</h1>
@@ -66,12 +66,14 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import Button from "../components/Button.vue";
+import Pad from "../components/Pad.vue";
 
 export default {
   name: "Collection",
   components: {
     Navbar,
     Button,
+    Pad,
   },
 };
 </script>
@@ -87,27 +89,6 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
   width: 100%;
-}
-
-.pad {
-  background: #dadada;
-  border: 0.8rem #fff solid;
-  width: 100%;
-  cursor: pointer;
-}
-
-.pad:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
-
-.pad-a.active {
-  border-color: #43e97b;
-}
-
-.pad-b.active {
-  border-color: #38f9d7;
 }
 
 .pack-infos {
