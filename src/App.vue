@@ -43,6 +43,7 @@ body {
 
 .content {
   padding-top: 10vh;
+  width: 100%;
 }
 
 p,

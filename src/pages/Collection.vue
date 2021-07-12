@@ -1,31 +1,34 @@
 <template>
   <Navbar />
-  <main class="content collection-content">
+  <main class="content collection-content" v-if="pack">
     <div class="pads">
-      <Pad row="a" />
-      <Pad row="a" />
-      <Pad row="a" />
-      <Pad row="a" />
-      <Pad row="a" />
-      <Pad row="a" />
-      <Pad row="a" />
-      <Pad row="a" />
-      <Pad row="b" />
-      <Pad row="b" />
-      <Pad row="b" />
-      <Pad row="b" />
-      <Pad row="b" />
-      <Pad row="b" />
-      <Pad row="b" />
-      <Pad row="b" />
+      <Pad row="a" :sound="pack.data.pads[0].pad.url" />
+      <Pad row="a" :sound="pack.data.pads[1].pad.url" />
+      <Pad row="a" :sound="pack.data.pads[2].pad.url" />
+      <Pad row="a" :sound="pack.data.pads[3].pad.url" />
+      <Pad row="a" :sound="pack.data.pads[4].pad.url" />
+      <Pad row="a" :sound="pack.data.pads[5].pad.url" />
+      <Pad row="a" :sound="pack.data.pads[6].pad.url" />
+      <Pad row="a" :sound="pack.data.pads[7].pad.url" />
+      <Pad row="b" :sound="pack.data.pads[8].pad.url" />
+      <Pad row="b" :sound="pack.data.pads[9].pad.url" />
+      <Pad row="b" :sound="pack.data.pads[10].pad.url" />
+      <Pad row="b" :sound="pack.data.pads[11].pad.url" />
+      <Pad row="b" :sound="pack.data.pads[12].pad.url" />
+      <Pad row="b" :sound="pack.data.pads[13].pad.url" />
+      <Pad row="b" :sound="pack.data.pads[14].pad.url" />
+      <Pad row="b" :sound="pack.data.pads[15].pad.url" />
     </div>
     <div class="pack-infos">
-      <h1>Pack Name</h1>
+      <h1>{{ pack.data.name[0].text }}</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-        purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+        {{ pack.data.description[0].text }}
       </p>
-      <Button class="pack-download" text="Download" />
+      <Button
+        class="pack-download"
+        text="Download"
+        :download="pack.data.download.url"
+      />
       <div class="collection-navigation">
         <button class="navigation-prev">
           <svg
@@ -75,6 +78,22 @@ export default {
     Button,
     Pad,
   },
+  data() {
+    return {
+      pack: null,
+    };
+  },
+  methods: {
+    async getContent() {
+      const pack = await this.$prismic.client.getSingle("pack");
+      this.pack = pack;
+
+      console.log(pack);
+    },
+  },
+  created() {
+    this.getContent();
+  },
 };
 </script>
 
@@ -88,11 +107,12 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
-  width: 100%;
+  flex: 1;
 }
 
 .pack-infos {
   padding-left: 14rem;
+  flex: 1;
 }
 
 .pack-download {

@@ -7,11 +7,11 @@ export default {
   name: "Pad",
   methods: {
     playSound() {
-      const sound = new Audio(require("../assets/kick.wav"));
+      const sound = new Audio(this.sound);
       sound.play();
     },
   },
-  props: ["row"],
+  props: ["row", "sound"],
 };
 </script>
 
