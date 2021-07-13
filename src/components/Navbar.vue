@@ -6,7 +6,7 @@
     <nav>
       <ul class="navbar-menu">
         <li>
-          <router-link class="navbar-link" to="/collection"
+          <router-link class="navbar-link" to="/collection/pack-1"
             >Collection</router-link
           >
         </li>

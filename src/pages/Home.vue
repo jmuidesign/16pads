@@ -4,7 +4,7 @@
     <h1 class="home-title">
       Browse a collection of free mpc sound packs for production and live
     </h1>
-    <Button text="Let's go" to="/collection" />
+    <Button text="Let's go" to="/collection/pack-1" />
   </main>
   <img class="home-background" src="../assets/16pads-background.svg" />
 </template>

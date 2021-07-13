@@ -7,17 +7,17 @@ import About from "../pages/About.vue";
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
   },
   {
-    path: "/collection",
-    name: "Collection",
+    path: "/collection/pack:id",
+    name: "collection",
     component: Collection,
   },
   {
     path: "/about",
-    name: "About",
+    name: "about",
     component: About,
   },
 ];

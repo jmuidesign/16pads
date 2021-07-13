@@ -30,7 +30,7 @@
         :download="pack.data.download.url"
       />
       <div class="collection-navigation">
-        <button class="navigation-prev">
+        <button class="navigation-prev" @click="prevPage">
           <svg
             width="101"
             height="16"
@@ -44,10 +44,8 @@
           </svg>
           Prev
         </button>
-        <div class="collection-pagination">
-          2 / 16
-        </div>
-        <button class="navigation-next">
+        <div class="collection-pagination">{{ this.page }} / 16</div>
+        <button class="navigation-next" @click="nextPage">
           Next
           <svg
             width="101"
@@ -81,14 +79,42 @@ export default {
   data() {
     return {
       pack: null,
+      page: null,
+      totalPages: null,
     };
   },
   methods: {
     async getContent() {
-      const pack = await this.$prismic.client.getSingle("pack");
-      this.pack = pack;
+      const pack = await this.$prismic.client.query(
+        this.$prismic.Predicates.at("document.type", "pack"),
+        {
+          page: this.$route.params.id.substring(1),
+          pageSize: 1,
+        }
+      );
+      this.pack = pack.results[0];
+      this.page = pack.page;
+      this.totalPages = pack.total_pages;
 
       console.log(pack);
+    },
+    prevPage() {
+      if (this.page !== 1) {
+        this.page -= 1;
+        this.$router.push({
+          name: "collection",
+          params: { id: `-${this.page}` },
+        });
+      }
+    },
+    nextPage() {
+      if (this.page !== this.totalPages) {
+        this.page += 1;
+        this.$router.push({
+          name: "collection",
+          params: { id: `-${this.page}` },
+        });
+      }
     },
   },
   created() {
