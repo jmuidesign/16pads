@@ -85,25 +85,32 @@ export default {
   },
   methods: {
     async getContent() {
+      const id = this.$route.params.id;
+
       const pack = await this.$prismic.client.query(
         this.$prismic.Predicates.at("document.type", "pack"),
         {
-          page: this.$route.params.id.substring(1),
+          page: id,
           pageSize: 1,
         }
       );
-      this.pack = pack.results[0];
-      this.page = pack.page;
-      this.totalPages = pack.total_pages;
 
-      console.log(pack);
+      if (id >= 1 && id <= pack.total_pages) {
+        this.pack = pack.results[0];
+        this.page = pack.page;
+        this.totalPages = pack.total_pages;
+      } else {
+        this.$router.push({
+          name: "notFound",
+        });
+      }
     },
     prevPage() {
       if (this.page !== 1) {
         this.page -= 1;
         this.$router.push({
           name: "collection",
-          params: { id: `-${this.page}` },
+          params: { id: this.page },
         });
       }
     },
@@ -112,7 +119,7 @@ export default {
         this.page += 1;
         this.$router.push({
           name: "collection",
-          params: { id: `-${this.page}` },
+          params: { id: this.page },
         });
       }
     },

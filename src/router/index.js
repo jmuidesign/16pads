@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../pages/Home.vue";
 import Collection from "../pages/Collection.vue";
 import About from "../pages/About.vue";
+import NotFound from "../pages/NotFound.vue";
 
 const routes = [
   {
@@ -11,7 +12,7 @@ const routes = [
     component: Home,
   },
   {
-    path: "/collection/pack:id",
+    path: "/collection/pack-:id(\\d+)",
     name: "collection",
     component: Collection,
   },
@@ -19,6 +20,11 @@ const routes = [
     path: "/about",
     name: "about",
     component: About,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "notFound",
+    component: NotFound,
   },
 ];
 
