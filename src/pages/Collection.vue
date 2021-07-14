@@ -1,6 +1,9 @@
 <template>
   <Navbar />
-  <main class="content collection-content" v-if="pack">
+  <main class="content spinner-content" v-if="isLoading">
+    <Spinner />
+  </main>
+  <main class="content collection-content" v-else-if="pack">
     <div class="pads">
       <Pad row="a" :sound="pack.data.pads[0].pad.url" />
       <Pad row="a" :sound="pack.data.pads[1].pad.url" />
@@ -74,6 +77,7 @@
 import Navbar from "../components/Navbar.vue";
 import Button from "../components/Button.vue";
 import Pad from "../components/Pad.vue";
+import Spinner from "../components/Spinner.vue";
 
 export default {
   name: "Collection",
@@ -81,12 +85,14 @@ export default {
     Navbar,
     Button,
     Pad,
+    Spinner,
   },
   data() {
     return {
       pack: null,
       page: null,
       totalPages: null,
+      isLoading: true,
       isNotFound: null,
     };
   },
@@ -107,6 +113,8 @@ export default {
         this.pack = pack.results[0];
         this.page = pack.page;
         this.totalPages = pack.total_pages;
+
+        setTimeout(() => (this.isLoading = false), 1000);
       } else {
         this.isNotFound = true;
       }
@@ -139,6 +147,11 @@ export default {
 <style>
 .collection-content {
   flex-direction: row;
+  align-items: center;
+}
+
+.spinner-content {
+  justify-content: center;
   align-items: center;
 }
 
