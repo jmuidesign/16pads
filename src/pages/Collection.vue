@@ -62,6 +62,12 @@
       </div>
     </div>
   </main>
+  <main class="content" v-else-if="isNotFound">
+    <h1>Not Found</h1>
+    <p>
+      Sorry this content doesn't exist or has been removed
+    </p>
+  </main>
 </template>
 
 <script>
@@ -81,6 +87,7 @@ export default {
       pack: null,
       page: null,
       totalPages: null,
+      isNotFound: null,
     };
   },
   methods: {
@@ -100,9 +107,7 @@ export default {
         this.page = pack.page;
         this.totalPages = pack.total_pages;
       } else {
-        this.$router.push({
-          name: "notFound",
-        });
+        this.isNotFound = true;
       }
     },
     prevPage() {
