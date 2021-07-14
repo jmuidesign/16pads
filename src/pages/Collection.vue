@@ -47,7 +47,9 @@
           </svg>
           Prev
         </button>
-        <div class="collection-pagination">{{ this.page }} / 16</div>
+        <div class="collection-pagination">
+          {{ this.page }} / {{ this.totalPages }}
+        </div>
         <button class="navigation-next" @click="nextPage">
           Next
           <svg
