@@ -1,14 +1,37 @@
 <template>
-  <button class="pad" :class="`pad-${row}`" @mousedown="playSound()"></button>
+  <button
+    class="pad"
+    :class="{ [`pad-${row}`]: row, active: isActive }"
+    @mousedown="
+      playSound($event);
+      toggleActive();
+    "
+    @mouseup="toggleActive()"
+    @keydown.enter="
+      playSound($event);
+      toggleActive();
+    "
+    @keyup.enter="toggleActive()"
+  ></button>
 </template>
 
 <script>
 export default {
   name: "Pad",
+  data() {
+    return {
+      isActive: false,
+    };
+  },
   methods: {
-    playSound() {
-      const sound = new Audio(this.sound);
-      sound.play();
+    playSound(event) {
+      if (!event.repeat) {
+        const sound = new Audio(this.sound);
+        sound.play();
+      }
+    },
+    toggleActive() {
+      this.isActive = !this.isActive;
     },
   },
   props: ["row", "sound"],
@@ -29,11 +52,11 @@ export default {
   padding-bottom: 100%;
 }
 
-.pad-a:active {
+.pad-a.active {
   border-color: #43e97b;
 }
 
-.pad-b:active {
+.pad-b.active {
   border-color: #38f9d7;
 }
 </style>
