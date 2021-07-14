@@ -137,8 +137,8 @@ export default {
 
 <style>
 .collection-content {
-  display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
 
 .pads {
@@ -169,7 +169,6 @@ export default {
   border: none;
   display: flex;
   align-items: center;
-  padding: 1rem 0;
   font-weight: 500;
   cursor: pointer;
 }
@@ -212,6 +211,13 @@ export default {
 @media (max-width: 1080px) {
   .collection-content {
     flex-direction: column;
+    align-items: stretch;
+    padding-top: 11rem;
+  }
+
+  .pads,
+  .pack-infos {
+    flex: 0;
   }
 
   .pads {
@@ -224,10 +230,6 @@ export default {
 
   .pack-download {
     margin-bottom: 8rem;
-  }
-
-  .collection-navigation {
-    margin-bottom: 10vh;
   }
 }
 </style>

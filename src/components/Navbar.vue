@@ -34,7 +34,9 @@ export default {
 }
 
 .navbar-logo {
-  max-width: 21rem;
+  width: 21.3rem;
+  height: 8rem;
+  display: block;
 }
 
 .navbar-menu {

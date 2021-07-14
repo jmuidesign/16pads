@@ -21,6 +21,7 @@ export default {
   border: 2px solid #fff;
   border-radius: 3rem;
   cursor: pointer;
+  align-self: flex-start;
 }
 
 .button:hover,

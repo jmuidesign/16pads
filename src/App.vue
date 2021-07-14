@@ -42,8 +42,12 @@ body {
 }
 
 .content {
-  padding-top: 10vh;
   width: 100%;
+  min-height: calc(100vh - 11rem);
+  padding-bottom: 11rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 p,
