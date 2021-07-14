@@ -99,6 +99,7 @@ export default {
         {
           page: id,
           pageSize: 1,
+          orderings: "[document.first_publication_date]",
         }
       );
 
