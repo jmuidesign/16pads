@@ -32,6 +32,12 @@ export default {
     fadeIn,
     fadeInUp,
   },
+  mounted() {
+    document.body.classList.add("home");
+  },
+  unmounted() {
+    document.body.classList.remove("home");
+  },
 };
 </script>
 

@@ -29,6 +29,9 @@ html,
 body {
   background: #203140;
   font-size: 62.5%;
+}
+
+body.home {
   overflow: hidden;
 }
 

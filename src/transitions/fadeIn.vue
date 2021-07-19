@@ -8,7 +8,7 @@
 import gsap from "gsap";
 
 export default {
-  name: "EntryTransition",
+  name: "fadeIn",
   methods: {
     beforeEnter(el) {
       gsap.set(el, {
