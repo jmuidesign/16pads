@@ -1,23 +1,36 @@
 <template>
   <Navbar />
   <main class="content">
-    <h1 class="home-title">
-      Browse a collection of free mpc sound packs for production and live
-    </h1>
-    <Button text="Let's go" to="/collection/pack-1" />
+    <fadeInUp>
+      <h1 class="home-title">
+        Browse a collection of free mpc sound packs for production and live
+      </h1>
+    </fadeInUp>
+    <fadeIn>
+      <Button text="Let's go" to="/collection/pack-1" />
+    </fadeIn>
   </main>
-  <img class="home-background" src="../assets/16pads-background.svg" />
+  <Background />
 </template>
 
 <script>
+// Components
 import Navbar from "../components/Navbar.vue";
 import Button from "../components/Button.vue";
+import Background from "../components/Background.vue";
+
+// Transitions
+import fadeIn from "../transitions/fadeIn.vue";
+import fadeInUp from "../transitions/fadeInUp.vue";
 
 export default {
   name: "Home",
   components: {
     Navbar,
     Button,
+    Background,
+    fadeIn,
+    fadeInUp,
   },
 };
 </script>
@@ -26,20 +39,6 @@ export default {
 .home-title {
   margin-bottom: 6rem;
   max-width: 70%;
-}
-
-.home-background {
-  position: absolute;
-  bottom: 0;
-  right: calc((100vw - 1300px) / -2);
-  width: 55rem;
-  max-width: 80%;
-}
-
-@media (max-width: 1444px) {
-  .home-background {
-    right: -5vw;
-  }
 }
 
 @media (max-width: 1280px) {

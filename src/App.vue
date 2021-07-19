@@ -29,6 +29,7 @@ html,
 body {
   background: #203140;
   font-size: 62.5%;
+  overflow: hidden;
 }
 
 .container {
@@ -38,7 +39,6 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: relative;
 }
 
 .content {

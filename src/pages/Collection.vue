@@ -23,15 +23,22 @@
       <Pad row="b" :sound="pack.data.pads[15].pad.url" />
     </div>
     <div class="pack-infos">
-      <h1>{{ pack.data.name[0].text }}</h1>
-      <p>
-        {{ pack.data.description[0].text }}
-      </p>
-      <Button
-        class="pack-download"
-        text="Download"
-        :download="pack.data.download.url"
-      />
+      <fadeInUp>
+        <h1>{{ pack.data.name[0].text }}</h1>
+      </fadeInUp>
+      <fadeIn>
+        <p>
+          {{ pack.data.description[0].text }}
+        </p>
+      </fadeIn>
+      <fadeIn>
+        <Button
+          class="pack-download"
+          text="Download"
+          :download="pack.data.download.url"
+        />
+      </fadeIn>
+
       <div class="collection-navigation">
         <button class="navigation-prev" @click="prevPage">
           <svg
@@ -76,10 +83,15 @@
 </template>
 
 <script>
+// Components
 import Navbar from "../components/Navbar.vue";
 import Button from "../components/Button.vue";
 import Pad from "../components/Pad.vue";
 import Spinner from "../components/Spinner.vue";
+
+// Transitions
+import fadeIn from "../transitions/fadeIn.vue";
+import fadeInUp from "../transitions/fadeInUp.vue";
 
 export default {
   name: "Collection",
@@ -88,6 +100,8 @@ export default {
     Button,
     Pad,
     Spinner,
+    fadeIn,
+    fadeInUp,
   },
   data() {
     return {
