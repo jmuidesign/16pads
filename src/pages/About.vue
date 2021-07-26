@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <main class="content">
+  <Content :offcentered="true">
     <fadeInUp>
       <h1>About</h1>
     </fadeInUp>
@@ -24,17 +24,20 @@
       </div>
     </fadeIn>
     <fadeIn>
-      <p>
+      <p class="contact-me">
         You can reach me by
         <a href="mailto:julienmerlin.dev@gmail.com">sending me an email</a>
       </p>
     </fadeIn>
-  </main>
+  </Content>
 </template>
 
 <script>
 // Components
 import Navbar from "../components/Navbar.vue";
+
+// Layouts
+import Content from "../layouts/Content.vue";
 
 // Transitions
 import fadeIn from "../transitions/fadeIn.vue";
@@ -44,6 +47,7 @@ export default {
   name: "About",
   components: {
     Navbar,
+    Content,
     fadeIn,
     fadeInUp,
   },
@@ -61,5 +65,9 @@ export default {
   width: 15rem;
   margin-right: 2rem;
   border-radius: 50%;
+}
+
+.contact-me {
+  margin-bottom: 0;
 }
 </style>

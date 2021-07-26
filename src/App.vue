@@ -1,12 +1,17 @@
 <template>
-  <div class="container">
+  <Container>
     <router-view :key="$route.path"></router-view>
-  </div>
+  </Container>
 </template>
 
 <script>
+import Container from "./layouts/Container.vue";
+
 export default {
   name: "App",
+  components: {
+    Container,
+  },
 };
 </script>
 
@@ -29,28 +34,6 @@ html,
 body {
   background: #203140;
   font-size: 62.5%;
-}
-
-body.home {
-  overflow: hidden;
-}
-
-.container {
-  max-width: 1300px;
-  min-height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.content {
-  width: 100%;
-  min-height: calc(100vh - 11rem);
-  padding-bottom: 11rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 p,

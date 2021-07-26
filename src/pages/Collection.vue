@@ -1,85 +1,87 @@
 <template>
   <Navbar />
-  <main class="content spinner-content" v-if="isLoading">
+  <Content class="spinner-content" v-if="isLoading">
     <Spinner />
-  </main>
-  <main class="content collection-content" v-else-if="pack">
-    <div class="pads">
-      <Pad row="a" :sound="pack.data.pads[0].pad.url" />
-      <Pad row="a" :sound="pack.data.pads[1].pad.url" />
-      <Pad row="a" :sound="pack.data.pads[2].pad.url" />
-      <Pad row="a" :sound="pack.data.pads[3].pad.url" />
-      <Pad row="a" :sound="pack.data.pads[4].pad.url" />
-      <Pad row="a" :sound="pack.data.pads[5].pad.url" />
-      <Pad row="a" :sound="pack.data.pads[6].pad.url" />
-      <Pad row="a" :sound="pack.data.pads[7].pad.url" />
-      <Pad row="b" :sound="pack.data.pads[8].pad.url" />
-      <Pad row="b" :sound="pack.data.pads[9].pad.url" />
-      <Pad row="b" :sound="pack.data.pads[10].pad.url" />
-      <Pad row="b" :sound="pack.data.pads[11].pad.url" />
-      <Pad row="b" :sound="pack.data.pads[12].pad.url" />
-      <Pad row="b" :sound="pack.data.pads[13].pad.url" />
-      <Pad row="b" :sound="pack.data.pads[14].pad.url" />
-      <Pad row="b" :sound="pack.data.pads[15].pad.url" />
-    </div>
-    <div class="pack-infos">
-      <fadeInUp>
-        <h1>{{ pack.data.name[0].text }}</h1>
-      </fadeInUp>
-      <fadeIn>
-        <p>
-          {{ pack.data.description[0].text }}
-        </p>
-      </fadeIn>
-      <fadeIn>
-        <Button
-          class="pack-download"
-          text="Download"
-          :download="pack.data.download.url"
-        />
-      </fadeIn>
+  </Content>
+  <Content v-else-if="pack">
+    <div class="collection-content">
+      <div class="pads">
+        <Pad row="a" :sound="pack.data.pads[0].pad.url" />
+        <Pad row="a" :sound="pack.data.pads[1].pad.url" />
+        <Pad row="a" :sound="pack.data.pads[2].pad.url" />
+        <Pad row="a" :sound="pack.data.pads[3].pad.url" />
+        <Pad row="a" :sound="pack.data.pads[4].pad.url" />
+        <Pad row="a" :sound="pack.data.pads[5].pad.url" />
+        <Pad row="a" :sound="pack.data.pads[6].pad.url" />
+        <Pad row="a" :sound="pack.data.pads[7].pad.url" />
+        <Pad row="b" :sound="pack.data.pads[8].pad.url" />
+        <Pad row="b" :sound="pack.data.pads[9].pad.url" />
+        <Pad row="b" :sound="pack.data.pads[10].pad.url" />
+        <Pad row="b" :sound="pack.data.pads[11].pad.url" />
+        <Pad row="b" :sound="pack.data.pads[12].pad.url" />
+        <Pad row="b" :sound="pack.data.pads[13].pad.url" />
+        <Pad row="b" :sound="pack.data.pads[14].pad.url" />
+        <Pad row="b" :sound="pack.data.pads[15].pad.url" />
+      </div>
+      <div class="pack-infos">
+        <fadeInUp>
+          <h1>{{ pack.data.name[0].text }}</h1>
+        </fadeInUp>
+        <fadeIn>
+          <p>
+            {{ pack.data.description[0].text }}
+          </p>
+        </fadeIn>
+        <fadeIn>
+          <Button
+            class="pack-download"
+            text="Download"
+            :download="pack.data.download.url"
+          />
+        </fadeIn>
 
-      <div class="collection-navigation">
-        <button class="navigation-prev" @click="prevPage">
-          <svg
-            width="101"
-            height="16"
-            viewBox="0 0 101 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M100.707 8.70711C101.098 8.31658 101.098 7.68342 100.707 7.29289L94.3431 0.928932C93.9526 0.538408 93.3195 0.538408 92.9289 0.928932C92.5384 1.31946 92.5384 1.95262 92.9289 2.34315L98.5858 8L92.9289 13.6569C92.5384 14.0474 92.5384 14.6805 92.9289 15.0711C93.3195 15.4616 93.9526 15.4616 94.3431 15.0711L100.707 8.70711ZM0 9H100V7H0V9Z"
-            />
-          </svg>
-          Prev
-        </button>
-        <div class="collection-pagination">
-          {{ this.page }} / {{ this.totalPages }}
+        <div class="collection-navigation">
+          <button class="navigation-prev" @click="prevPage">
+            <svg
+              width="101"
+              height="16"
+              viewBox="0 0 101 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M100.707 8.70711C101.098 8.31658 101.098 7.68342 100.707 7.29289L94.3431 0.928932C93.9526 0.538408 93.3195 0.538408 92.9289 0.928932C92.5384 1.31946 92.5384 1.95262 92.9289 2.34315L98.5858 8L92.9289 13.6569C92.5384 14.0474 92.5384 14.6805 92.9289 15.0711C93.3195 15.4616 93.9526 15.4616 94.3431 15.0711L100.707 8.70711ZM0 9H100V7H0V9Z"
+              />
+            </svg>
+            Prev
+          </button>
+          <div class="collection-pagination">
+            {{ this.page }} / {{ this.totalPages }}
+          </div>
+          <button class="navigation-next" @click="nextPage">
+            Next
+            <svg
+              width="101"
+              height="16"
+              viewBox="0 0 101 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M100.707 8.70711C101.098 8.31658 101.098 7.68342 100.707 7.29289L94.3431 0.928932C93.9526 0.538408 93.3195 0.538408 92.9289 0.928932C92.5384 1.31946 92.5384 1.95262 92.9289 2.34315L98.5858 8L92.9289 13.6569C92.5384 14.0474 92.5384 14.6805 92.9289 15.0711C93.3195 15.4616 93.9526 15.4616 94.3431 15.0711L100.707 8.70711ZM0 9H100V7H0V9Z"
+              />
+            </svg>
+          </button>
         </div>
-        <button class="navigation-next" @click="nextPage">
-          Next
-          <svg
-            width="101"
-            height="16"
-            viewBox="0 0 101 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M100.707 8.70711C101.098 8.31658 101.098 7.68342 100.707 7.29289L94.3431 0.928932C93.9526 0.538408 93.3195 0.538408 92.9289 0.928932C92.5384 1.31946 92.5384 1.95262 92.9289 2.34315L98.5858 8L92.9289 13.6569C92.5384 14.0474 92.5384 14.6805 92.9289 15.0711C93.3195 15.4616 93.9526 15.4616 94.3431 15.0711L100.707 8.70711ZM0 9H100V7H0V9Z"
-            />
-          </svg>
-        </button>
       </div>
     </div>
-  </main>
-  <main class="content" v-else-if="isNotFound">
+  </Content>
+  <Content v-else-if="isNotFound">
     <h1>Not Found</h1>
     <p>
       Sorry this content doesn't exist or has been removed
     </p>
-  </main>
+  </Content>
 </template>
 
 <script>
@@ -88,6 +90,9 @@ import Navbar from "../components/Navbar.vue";
 import Button from "../components/Button.vue";
 import Pad from "../components/Pad.vue";
 import Spinner from "../components/Spinner.vue";
+
+// Layouts
+import Content from "../layouts/Content.vue";
 
 // Transitions
 import fadeIn from "../transitions/fadeIn.vue";
@@ -100,6 +105,7 @@ export default {
     Button,
     Pad,
     Spinner,
+    Content,
     fadeIn,
     fadeInUp,
   },
@@ -133,6 +139,7 @@ export default {
         setTimeout(() => (this.isLoading = false), 1000);
       } else {
         this.isNotFound = true;
+        this.isLoading = false;
       }
     },
     prevPage() {
@@ -162,8 +169,7 @@ export default {
 
 <style>
 .collection-content {
-  flex-direction: row;
-  align-items: center;
+  display: flex;
 }
 
 .spinner-content {
@@ -241,8 +247,6 @@ export default {
 @media (max-width: 1080px) {
   .collection-content {
     flex-direction: column;
-    align-items: stretch;
-    padding-top: 11rem;
   }
 
   .pads,

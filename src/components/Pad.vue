@@ -7,6 +7,11 @@
       toggleActive();
     "
     @mouseup="toggleActive()"
+    @touchstart.prevent="
+      playSound($event);
+      toggleActive();
+    "
+    @touchend="toggleActive()"
     @keydown.enter="
       playSound($event);
       toggleActive();

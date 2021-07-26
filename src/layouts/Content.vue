@@ -1,0 +1,35 @@
+<template>
+  <main class="content" :class="{ offcentered: offcentered }">
+    <slot></slot>
+  </main>
+</template>
+
+<script>
+export default {
+  name: "Content",
+  props: ["offcentered"],
+};
+</script>
+
+<style>
+.content {
+  width: 100%;
+  min-height: calc(100vh - 11rem);
+  padding: 11rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.offcentered:after {
+  content: "";
+  display: block;
+  height: 11rem;
+}
+
+@media (min-height: 900px) {
+  .content {
+    max-height: calc(100vh - 11rem);
+  }
+}
+</style>
