@@ -7,6 +7,7 @@
       toggleActive();
     "
     @mouseup="toggleActive()"
+    @mouseleave="isActive = false"
     @touchstart.prevent="
       playSound($event);
       toggleActive();
@@ -26,13 +27,17 @@ export default {
   data() {
     return {
       isActive: false,
+      soundPlayed: null,
     };
   },
   methods: {
     playSound(event) {
+      if (this.soundPlayed) {
+        this.soundPlayed.pause();
+      }
       if (!event.repeat) {
-        const sound = new Audio(this.sound);
-        sound.play();
+        this.soundPlayed = new Audio(this.sound);
+        this.soundPlayed.play();
       }
     },
     toggleActive() {
