@@ -6,22 +6,22 @@
   <Content v-else-if="pack">
     <div class="collection-content">
       <div class="pads">
-        <Pad row="a" :sound="pack.data.pads[0].pad.url" />
-        <Pad row="a" :sound="pack.data.pads[1].pad.url" />
-        <Pad row="a" :sound="pack.data.pads[2].pad.url" />
-        <Pad row="a" :sound="pack.data.pads[3].pad.url" />
-        <Pad row="a" :sound="pack.data.pads[4].pad.url" />
-        <Pad row="a" :sound="pack.data.pads[5].pad.url" />
-        <Pad row="a" :sound="pack.data.pads[6].pad.url" />
-        <Pad row="a" :sound="pack.data.pads[7].pad.url" />
-        <Pad row="b" :sound="pack.data.pads[8].pad.url" />
-        <Pad row="b" :sound="pack.data.pads[9].pad.url" />
-        <Pad row="b" :sound="pack.data.pads[10].pad.url" />
-        <Pad row="b" :sound="pack.data.pads[11].pad.url" />
-        <Pad row="b" :sound="pack.data.pads[12].pad.url" />
-        <Pad row="b" :sound="pack.data.pads[13].pad.url" />
-        <Pad row="b" :sound="pack.data.pads[14].pad.url" />
-        <Pad row="b" :sound="pack.data.pads[15].pad.url" />
+        <Pad row="a" :soundURL="pack.data.pads[0].pad.url" />
+        <Pad row="a" :soundURL="pack.data.pads[1].pad.url" />
+        <Pad row="a" :soundURL="pack.data.pads[2].pad.url" />
+        <Pad row="a" :soundURL="pack.data.pads[3].pad.url" />
+        <Pad row="a" :soundURL="pack.data.pads[4].pad.url" />
+        <Pad row="a" :soundURL="pack.data.pads[5].pad.url" />
+        <Pad row="a" :soundURL="pack.data.pads[6].pad.url" />
+        <Pad row="a" :soundURL="pack.data.pads[7].pad.url" />
+        <Pad row="b" :soundURL="pack.data.pads[8].pad.url" />
+        <Pad row="b" :soundURL="pack.data.pads[9].pad.url" />
+        <Pad row="b" :soundURL="pack.data.pads[10].pad.url" />
+        <Pad row="b" :soundURL="pack.data.pads[11].pad.url" />
+        <Pad row="b" :soundURL="pack.data.pads[12].pad.url" />
+        <Pad row="b" :soundURL="pack.data.pads[13].pad.url" />
+        <Pad row="b" :soundURL="pack.data.pads[14].pad.url" />
+        <Pad row="b" :soundURL="pack.data.pads[15].pad.url" />
       </div>
       <div class="pack-infos">
         <fadeInUp>

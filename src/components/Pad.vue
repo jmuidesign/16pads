@@ -27,24 +27,28 @@ export default {
   data() {
     return {
       isActive: false,
-      soundPlayed: null,
+      sound: new Audio(this.soundURL),
     };
   },
   methods: {
     playSound(event) {
-      if (this.soundPlayed) {
-        this.soundPlayed.pause();
-      }
       if (!event.repeat) {
-        this.soundPlayed = new Audio(this.sound);
-        this.soundPlayed.play();
+        this.sound.currentTime = 0;
+        this.sound.play();
       }
     },
     toggleActive() {
       this.isActive = !this.isActive;
     },
   },
-  props: ["row", "sound"],
+  props: ["ref", "row", "soundURL"],
+  beforeUnmount() {
+    this.sound.pause();
+
+    this.sound.remove();
+    this.sound.src = "";
+    this.sound.scrObject = null;
+  },
 };
 </script>
 
