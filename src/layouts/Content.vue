@@ -27,7 +27,7 @@ export default {
   height: 11rem;
 }
 
-@media (min-height: 900px) {
+@media (min-width: 1080px) and (min-height: 900px) {
   .content {
     max-height: calc(100vh - 11rem);
   }
