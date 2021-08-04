@@ -170,13 +170,6 @@ export default {
   created() {
     this.getContent();
   },
-  // computed() {
-  //   isNavigationHidden() {
-  //     return {
-  //       'navigation-hidden': this.page === 1
-  //     }
-  //   }
-  // }
 };
 </script>
 
