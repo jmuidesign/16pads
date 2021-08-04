@@ -7,7 +7,7 @@
     <fadeIn>
       <p>
         16pads is a collection of free MPC sound packs for music production and
-        live. All the packs are free and can be use in personnal or commercial
+        live. All the packs are free and can be used in personal or commercial
         projects. These packs have been created with existing royalty free
         sounds find on the web. The original idea was to create an interactive
         way of sharing sounds packs for music production. You can browse
