@@ -43,7 +43,7 @@
         <div class="collection-navigation">
           <button
             class="navigation-prev"
-            :class="{ 'navigation-hidden': this.page === 1 }"
+            :class="{ 'navigation-hidden': page === 1 }"
             @click="prevPage"
           >
             <svg
@@ -62,7 +62,7 @@
           <div class="collection-pagination">{{ page }} / {{ totalPages }}</div>
           <button
             class="navigation-next"
-            :class="{ 'navigation-hidden': this.page === this.totalPages }"
+            :class="{ 'navigation-hidden': page === totalPages }"
             @click="nextPage"
           >
             Next
