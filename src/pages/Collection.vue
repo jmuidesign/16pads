@@ -41,7 +41,11 @@
         </fadeIn>
 
         <div class="collection-navigation">
-          <button class="navigation-prev" @click="prevPage">
+          <button
+            class="navigation-prev"
+            :class="{ 'navigation-hidden': this.page === 1 }"
+            @click="prevPage"
+          >
             <svg
               width="101"
               height="16"
@@ -56,7 +60,11 @@
             Prev
           </button>
           <div class="collection-pagination">{{ page }} / {{ totalPages }}</div>
-          <button class="navigation-next" @click="nextPage">
+          <button
+            class="navigation-next"
+            :class="{ 'navigation-hidden': this.page === this.totalPages }"
+            @click="nextPage"
+          >
             Next
             <svg
               width="101"
@@ -162,6 +170,13 @@ export default {
   created() {
     this.getContent();
   },
+  // computed() {
+  //   isNavigationHidden() {
+  //     return {
+  //       'navigation-hidden': this.page === 1
+  //     }
+  //   }
+  // }
 };
 </script>
 
@@ -228,6 +243,10 @@ export default {
 
 .navigation-next svg {
   margin-left: 2rem;
+}
+
+.navigation-hidden {
+  opacity: 0;
 }
 
 .collection-pagination {
