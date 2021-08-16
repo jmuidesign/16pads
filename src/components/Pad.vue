@@ -22,19 +22,27 @@
 </template>
 
 <script>
+import { useSound } from "@vueuse/sound";
+
 export default {
   name: "Pad",
+  setup(props) {
+    const { play, stop } = useSound(props.soundURL, { interrupt: true });
+
+    return {
+      play,
+      stop,
+    };
+  },
   data() {
     return {
       isActive: false,
-      sound: new Audio(this.soundURL),
     };
   },
   methods: {
     playSound(event) {
       if (!event.repeat) {
-        this.sound.currentTime = 0;
-        this.sound.play();
+        this.play();
       }
     },
     toggleActive() {
@@ -43,11 +51,7 @@ export default {
   },
   props: ["ref", "row", "soundURL"],
   beforeUnmount() {
-    this.sound.pause();
-
-    this.sound.remove();
-    this.sound.src = "";
-    this.sound.scrObject = null;
+    this.stop();
   },
 };
 </script>
