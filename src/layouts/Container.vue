@@ -12,7 +12,8 @@ export default {
 
 <style>
 .container {
-  max-width: 1300px;
+  max-width: 1240px;
+  min-height: 100vh;
   margin: 0 auto;
   display: flex;
   align-items: center;

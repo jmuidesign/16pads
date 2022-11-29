@@ -14,13 +14,13 @@
         different packs in collection section and listen sounds by clicking on
         pads. This project is mainly a concept for my portfolio but feel free to
         contact me if you would love to see new packs published, give me
-        suggestions to improve theme, report a bug or give me any advice you
+        suggestions to improve them, report a bug or give me any advice you
         think is useful.
       </p>
     </fadeIn>
     <fadeIn>
       <div class="author-bubble">
-        <img src="../assets/pic.png" alt="me" />
+        <img src="../assets/pic.jpeg" alt="me" />
         <div>
           <h2>Julien Merlin</h2>
           <p>Designer & Developer</p>
@@ -29,8 +29,8 @@
     </fadeIn>
     <fadeIn>
       <p class="contact-me">
-        You can reach me by
-        <a href="mailto:julienmerlin.dev@gmail.com">sending me an email</a>
+        Something to share ?
+        <a href="mailto:julienmerlin.dev@gmail.com">email me</a>
       </p>
     </fadeIn>
   </Content>

@@ -44,7 +44,7 @@ button {
 }
 
 p {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 170%;
   margin-bottom: 4rem;
 }
@@ -60,7 +60,7 @@ a::selection {
 }
 
 button {
-  font-size: 2.4rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -76,7 +76,7 @@ a:focus {
 
 h1 {
   font-family: "DM Serif Display", sans-serif;
-  font-size: 8rem;
+  font-size: 5.6rem;
   font-weight: 400;
   color: #fff;
   line-height: 130%;
@@ -85,7 +85,7 @@ h1 {
 
 h2 {
   font-family: "Poppins", sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #fff;
   line-height: 170%;
@@ -98,35 +98,17 @@ h2 {
   }
 }
 
-@media (max-width: 1280px) {
+@media(max-width: 768px) {
   html,
   body {
     font-size: 55%;
   }
 }
 
-@media (max-width: 920px) {
+@media(max-width: 580px) {
   html,
   body {
     font-size: 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  html,
-  body {
-    font-size: 45%;
-  }
-}
-
-@media (max-width: 425px) {
-  html,
-  body {
-    font-size: 40%;
-  }
-
-  h1 {
-    font-size: 5rem;
   }
 }
 </style>

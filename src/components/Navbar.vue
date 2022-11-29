@@ -34,8 +34,7 @@ export default {
 }
 
 .navbar-logo {
-  width: 21.3rem;
-  height: 8rem;
+  width: 16rem;
   display: block;
 }
 
@@ -47,7 +46,7 @@ export default {
 .navbar-link {
   text-decoration: none;
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   margin-left: 3rem;
 }
 </style>

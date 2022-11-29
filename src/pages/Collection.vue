@@ -129,7 +129,7 @@ export default {
       const id = this.$route.params.id;
 
       const pack = await this.$prismic.client.query(
-        this.$prismic.Predicates.at("document.type", "pack"),
+        this.$prismic.Predicates?.at("document.type", "pack"),
         {
           page: id,
           pageSize: 1,
@@ -176,6 +176,7 @@ export default {
 <style>
 .collection-content {
   display: flex;
+  align-items: center;
 }
 
 .spinner-content {
@@ -244,7 +245,7 @@ export default {
 
 .collection-pagination {
   font-family: "Poppins", sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: #fff;
 }
 
@@ -257,6 +258,7 @@ export default {
 @media (max-width: 1080px) {
   .collection-content {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .pads,

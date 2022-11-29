@@ -14,8 +14,8 @@ export default {
 <style>
 .content {
   width: 100%;
-  min-height: calc(100vh - 11rem);
-  padding: 11rem 0;
+  min-height: calc(100vh - 8rem);
+  padding: 8rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,12 +24,12 @@ export default {
 .offcentered:after {
   content: "";
   display: block;
-  height: 11rem;
+  height: 8rem;
 }
 
 @media (min-width: 1080px) and (min-height: 900px) {
   .content {
-    max-height: calc(100vh - 11rem);
+    max-height: calc(100vh - 8rem);
   }
 }
 </style>

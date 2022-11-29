@@ -64,13 +64,13 @@ body.home {
   position: absolute;
   background: url("../assets/16pads-background.svg");
   background-repeat: no-repeat;
-  background-size: 55rem auto;
+  background-size: 56rem auto;
   background-position: bottom right;
 }
 
 @media (max-height: 900px) {
   .home-background {
-    background-size: 45rem auto;
+    background-size: 40rem auto;
   }
 }
 

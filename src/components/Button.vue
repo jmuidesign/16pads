@@ -13,7 +13,7 @@ export default {
 <style scoped>
 .button {
   display: inline-block;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 900;
   text-decoration: none;
   padding: 1rem 3rem;
