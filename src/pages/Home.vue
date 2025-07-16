@@ -52,6 +52,7 @@ export default {
 <style>
 body.home {
   position: relative;
+  overflow: hidden;
 }
 
 .home-content {
